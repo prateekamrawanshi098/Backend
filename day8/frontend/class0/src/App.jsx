@@ -9,7 +9,7 @@ const App = () => {
 
 
   function fetchNotes() {
-    axios.get("http://localhost:3000/notes").then((res) => {
+    axios.get("https://backend-1-iex9.onrender.com/notes").then((res) => {
       setnotes(res.data.notes);
     });
   }
@@ -25,27 +25,28 @@ const App = () => {
     
     console.log(title.value,description.value);
     
-    axios.post("http://localhost:3000/notes",{
-      title: title.value,
-      description:description.value
-    })
+    axios
+      .post("https://backend-1-iex9.onrender.com/notes", {
+        title: title.value,
+        description: description.value,
+      })
 
-      .then(res => {
+      .then((res) => {
         console.log(res.data);
-        fetchNotes()
-      
-    })
+        fetchNotes();
+      });
 
   }
 
   function deleteHandle(id) {
     console.log(id);
 
-    axios.delete("http://localhost:3000/notes/" + id)
-      .then(res => {
+    axios
+      .delete("https://backend-1-iex9.onrender.com/notes/" + id)
+      .then((res) => {
         console.log(res.data);
-        fetchNotes()
-      })
+        fetchNotes();
+      });
     
   }
 
