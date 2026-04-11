@@ -1,0 +1,47 @@
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+
+.form-container{
+    height: fit-content;
+    min-width: 500px;
+
+    form{
+        height: fit-content;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+
+        input{
+            padding: 1.5rem;
+            background-color: whitesmoke;
+            border:none;
+            outline: none;
+            border-radius: 1rem;
+        }
+
+        button{
+            padding: 1.5rem;
+            border-radius: 0.8rem;
+            border: none;
+            outline: none;
+            background-color: rgb(155, 50, 68);
+            color: whitesmoke;
+            font-weight: 900;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all ease 0.8s;
+        }
+        button:hover{
+            scale: 0.9;
+        }
+    }
+}
+
+}
