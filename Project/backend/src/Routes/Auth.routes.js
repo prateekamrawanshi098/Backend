@@ -6,6 +6,8 @@ const identifyUser = require("../middlewares/auth.middleware");
 
 authRouter.post("/register", authController.registrationController);
 
-authRouter.post("/login",authController.loginController)
+authRouter.post("/login", authController.loginController)
+
+authRouter.get("/get-me",identifyUser,authController.getmeController)
 
 module.exports = authRouter;

@@ -103,10 +103,26 @@ async function loginController(req, res) {
 
   res.status(200).json({
     message: "login successfully",
+    isUserExits
   });
+}
+
+async function getmeController(req,res) {
+  const userId = req.user
+  const user =await userModel.findOne({ userId })
+  
+  res.status(200).json({
+    user: {
+      username: user.username,
+      email: user.email,
+      bio: user.bio,
+      profileImg: user.profilePicture
+    }
+  })
 }
 
 module.exports = {
   loginController,
   registrationController,
+  getmeController
 };
