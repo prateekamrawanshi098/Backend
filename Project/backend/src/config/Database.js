@@ -1,9 +1,14 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const likeModel = require("../Model/like.model");
 
-function connectToDB() {
-    mongoose.connect(process.env.MONGO_URL)
+async function connectToDB() {
+  try {
+    await mongoose.connect(process.env.MONGO_URL);
+    await likeModel.syncIndexes();
     console.log("connected to DB");
-    
+  } catch (error) {
+    console.error("database connection error:", error.message);
+  }
 }
 
-module.exports=connectToDB
+module.exports = connectToDB;

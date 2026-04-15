@@ -2,13 +2,12 @@ import { createBrowserRouter } from "react-router";
 
 import Login from "../features/auth/Login";
 import Register from "../features/auth/Register";
+import Feed from "../features/post/Pages/Feed";
+
 
 export const routes = createBrowserRouter([
 
-  {
-    path: "/",
-    element: <h1>Welcome to Instagram</h1>
-  },
+ 
   {
     path: "/login",
     element: <Login />
@@ -17,4 +16,9 @@ export const routes = createBrowserRouter([
     path: "/register",
     element: <Register />,
   },
+
+  {
+    path: "/",
+    element: <Feed />
+  }
 ]);

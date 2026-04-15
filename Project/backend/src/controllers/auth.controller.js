@@ -1,9 +1,6 @@
 const userModel = require("../Model/user.model");
-const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const { decode } = require("punycode");
-const postModel = require("../Model/post.model");
 
 async function registrationController(req, res) {
   const { username, email, password, bio, profilePicture } = req.body;
@@ -77,7 +74,7 @@ async function loginController(req, res) {
         email,
       },
     ],
-  });
+  }).select("+password");
 
   if (!isUserExits) {
     return res.status(404).json("email or username doesn't exists");
@@ -103,20 +100,30 @@ async function loginController(req, res) {
 
   res.status(200).json({
     message: "login successfully",
-    isUserExits
+    user: {
+      username: isUserExits.username,
+      email: isUserExits.email,
+      bio: isUserExits.bio,
+      profilePicture: isUserExits.profilePicture,
+    },
   });
 }
 
 async function getmeController(req,res) {
-  const userId = req.user
-  const user =await userModel.findOne({ userId })
+  const user = await userModel.findById(req.user.id);
+
+  if (!user) {
+    return res.status(404).json({
+      message: "user not found",
+    });
+  }
   
   res.status(200).json({
     user: {
       username: user.username,
       email: user.email,
       bio: user.bio,
-      profileImg: user.profilePicture
+      profilePicture: user.profilePicture
     }
   })
 }

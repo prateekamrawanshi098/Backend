@@ -17,6 +17,8 @@ postRouter.get(
   identifyUser,postController.getPostDetailsController,
 );
 
-postRouter.post("/like/:postId",identifyUser,postController.likePostController)
+postRouter.post("/like/:postId", identifyUser, postController.likePostController)
+
+postRouter.get("/posts/feed",identifyUser,postController.getFeedController)
 
 module.exports=postRouter

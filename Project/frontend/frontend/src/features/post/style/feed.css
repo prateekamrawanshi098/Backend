@@ -1,0 +1,105 @@
+.feed {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  background: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.06), transparent 35%), radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.04), transparent 35%), linear-gradient(180deg, #1b1f26 0%, #13161c 100%);
+}
+.feed .posts {
+  width: min(100%, 760px);
+  background: #0f1218;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+.feed .user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.feed .user p {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #f2f4f8;
+}
+.feed .profile-pic {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid #ff7f50;
+  background: #2b2f38;
+}
+.feed .post {
+  width: 100%;
+  background: #0a0d12;
+}
+.feed .post-pic {
+  width: 100%;
+  max-height: 540px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: #161a21;
+}
+.feed .bottom {
+  padding: 0.9rem 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.feed .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.55rem;
+}
+.feed .like-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f4f6fb;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.feed .like-btn svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.feed .like-btn:hover {
+  border-color: #ff7f50;
+  color: #ff7f50;
+  background: rgba(255, 127, 80, 0.08);
+}
+.feed .like-count {
+  font-size: 0.88rem;
+  color: #b8c0cf;
+}
+.feed .caption {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #d8dde6;
+}
+
+@media (max-width: 768px) {
+  .feed {
+    padding: 1rem 0.55rem;
+  }
+  .feed .posts {
+    border-radius: 0.9rem;
+  }
+  .feed .post-pic {
+    max-height: 400px;
+  }
+}/*# sourceMappingURL=feed.css.map */

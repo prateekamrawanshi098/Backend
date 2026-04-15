@@ -9,7 +9,7 @@ const likeSchema = new mongoose.Schema(
 
     posts: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "users",
+      ref: "posts",
       required: [true, "post id is required for creatring a like"],
     },
   },
@@ -20,7 +20,7 @@ const likeSchema = new mongoose.Schema(
 
 likeSchema.index(
   {
-    post: 1,
+    posts: 1,
     user: 1,
   },
   {

@@ -9,13 +9,13 @@ const baseAPI = axios.create({
 );
 
 export async function registration(username, email, password) {
-  const respons = await baseAPI.post("/register", {
+  const response = await baseAPI.post("/register", {
     email,
     username,
     password,
   });
 
-  return respons.data;
+  return response.data;
 }
 
 export async function login(emailOrusername, password) {

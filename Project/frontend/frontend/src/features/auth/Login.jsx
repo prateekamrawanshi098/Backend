@@ -8,7 +8,7 @@ const Login = () => {
   const [emailOrUsername, setemailOrPassword] = useState("");
   const [password, setpassword] = useState("");
 
-  const { handleLogin, loading } = useAuth();
+  const {user, handleLogin, loading } = useAuth();
   const navigate = useNavigate();
   if (loading) {
     return <h1>LOADING...</h1>;

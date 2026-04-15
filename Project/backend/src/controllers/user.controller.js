@@ -11,7 +11,7 @@ async function followUserController(req, res) {
     });
     }
 
-     const isFolloweeExists = userModel.findOne({ username:followeeUsername });
+     const isFolloweeExists = await userModel.findOne({ username:followeeUsername });
 
      if (!isFolloweeExists) {
        return res.status(400).json({
