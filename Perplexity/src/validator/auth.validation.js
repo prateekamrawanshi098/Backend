@@ -34,3 +34,11 @@ export const registerValidator = [
 
   validate,
 ];
+
+export const loginValidator = [
+  body("email").trim().notEmpty().isEmail(),
+
+  body("password").notEmpty(),
+
+  validate,
+];

@@ -12,6 +12,7 @@
   "description": "",
   "type": "module",
   "dependencies": {
+    "@langchain/google-genai": "^0.2.18",
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
@@ -20,6 +21,7 @@
     "express-validator": "^7.3.2",
     "googleapis": "^171.4.0",
     "jsonwebtoken": "^9.0.3",
+    "langchain": "^0.3.37",
     "mongoose": "^9.4.1",
     "nodemailer": "^8.0.5"
   }
